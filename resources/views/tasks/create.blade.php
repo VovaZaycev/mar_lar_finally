@@ -3,7 +3,6 @@
 @section('content')
     <h2>All tasks</h2>
     <!-- Bootstrap шаблон... -->
-
     <div class="panel-body">
         <!-- Отображение ошибок проверки ввода -->
     @include('common.errors')
@@ -16,7 +15,7 @@
                 <label for="task" class="col-sm-3 control-label">Задача</label>
 
                 <div class="col-sm-6">
-                    <input type="text" name="name" id="task-name" class="form-control">
+                    <input type="text" name="name" id="task-name" class="form-control" value="{{old('name')}}">
                 </div>
             </div>
 
@@ -31,5 +30,4 @@
         </form>
     </div>
     <a href="{{route('tasks.create')}}" class="btn btn-success"><i class="fa fa-plus"></i>Create new task</a>
-    <!-- TODO: Текущие задачи -->
 @endsection
